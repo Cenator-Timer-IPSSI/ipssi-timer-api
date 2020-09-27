@@ -20,8 +20,8 @@ COPY --chown=node:node . .
 
 EXPOSE 8080
 
-# On dev mode
+# On dev mode - comment this line on Prod mode
 CMD [ "npm", "run", "dev" ]
 
-# On Prod mode
+# On Prod mode - uncomment this line
 #CMD [ "npm", "run", "start" ]
