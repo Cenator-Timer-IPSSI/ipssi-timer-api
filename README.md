@@ -4,7 +4,7 @@
 	<br>
 </div>
 
-# Project Timer Manager - API
+# IPSSI Timer Manager - API
 
 Project Timer Manager is a `` web application to log passed time by project`` that allow users `to manage its projects, teams and logged times`.
 
@@ -19,41 +19,47 @@ Before you begin, ensure you have met the following requirements:
 * If you have a `Windows`, `Linux` or a `Mac` machine, that's fine, you're good to go.
 
 
-## Installing Project Timer Manager
+## Setup IPSSI Timer Manager - API locally
 
-Rename the `.env.example` file in the root folder and put the correct values in the respective variables.
+Duplicate the `.env.example` file and renamed it to `.env`. Then copy and paste the content of `.env.example` in the `.env`
 
-### Here are values to put in `.env.example`
+Then create a file named `firebaseAuthServiceAccountKey.json` inside a folder named `config` and put the content below inside this one.
+
+
 ```sh
-PORT=8080
-# To use on localhost
-MONGO_LOCAL_URI=mongodb://localhost:27017/ipssi_timer
-# To use when you use MongoDB Atlas cloud Database services
-# To use on localhost with Docker
-
-# Cloudinary env vars
-CLOUDINARY_CLOUD_NAME=almorisson
-CLOUDINARY_API_KEY=279468386239394
-CLOUDINARY_API_SECRET=zKAmTy6RYYOqk28qnrc5StBLSyM
+{
+  "type": "service_account",
+  "project_id": "ipssi-project-timer-manager",
+  "private_key_id": "296af483c8f3247275d3f217ec4123b6e352671c",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDFKSWcwiAnr+NG\n0Js4kgXbOZNzfInK/B0Ux4o6FEpSvTgr8gaP+yuVHWpaAIdymh0RBK7SZ7A6UNG0\nGjKkJ57PBFvd+QFJzKjf+o4qfifINFAblaLNzIul0EBGLeptqbKkM4jWZF9yG4vB\n2idOzk08b/F9nYfez0sNSopAoGzNzZw4VMBi9YSJms3VI64ggw5RMcII7OXenMAS\n+7GDeQ4gWHcm5rL/n88NTpFhL/20XvPTa0lC49pHx3/YD6DKK5zy1MBjhQD6SBov\n7asYruXygtiCXrW+kwcjEWkJOPTbrEXAm+Fk1MkviNDr3k2wDRhzChlMPgBGbXRM\nH4VvdcD5AgMBAAECggEAB/g3cyBVNql5U0raJWWgqzmG9HF9q+j4P3dn5txcWz8X\nEs6uFXqaisTlQEVadEdWwrH445wpn1fWPDSdZK2N0bIsSPsYYlxtnJ0nC0BteP4l\nWVIZgj5hDDcwa+3N9rgX9qN3Jexpf8YthmzcLycvb9CaF0DrhbYFI4DGeSGK+GAj\nuVOdVyesKJOniUe2f7qoqEa0qG3GakqJtSn2zfr5mMS4ZkBmev8z/ABvjGyTLPa6\ntFjEm8vdi9EH2uu21EVGmcHB1T7PEYQCn55l2UmtL0dyqTiywv3uetkBp4K/e7xv\nVZrBBVxCAjqRML4mMA4LAP7H3WKgZQTIaTOmUXr68QKBgQDxcbik9eQENj9A/RWS\noVibfzzMjBYotoZHCDCdaRZ6CAQ96wZ7HOo4nRvy3b+n5Q/bhDQZNz5HCgNiEi+v\n6LQyhffwwnleEcBszppAK8VPI1xB9jkxNtRUduTWjXrwlxAXIm5i35/cvkwTtu40\nyQee2Bj87pEF2siYsstEqmAeCQKBgQDRC/xT+u2kr1MVaJkXQzApNtVm1AwDJpH/\nW7u0VJS/xmZNaMhQlf/E+QR1bsJI4YvKQbahW1A2dywdrlZYBEHbEzwPnR41Wj0J\ncw5ydQiQQRuNoOaMkaGjMikqZJuBmA0CcIJBeMYxF1i/QSdUzxTuWXratci74hcQ\nVt/H6hRHcQKBgC06xYE5gvZ7BwxwnLr0OLogcs5Kq9gCoVLrKNhEGG7R06GZxoQH\nnaTvYY30lnOoSHkx4eSbYbJDIPEdQQuuBxuz1wemFsBViPuZFHJTAMpbcGv26S3b\n/Ji6ERJUPKSXV+9NhupExBjBGVVUHnmK8z+BceTn+AjlvFBGpid91zWpAoGAb7Oy\n2gEMOOKCR79Dhn2dX3hwYWjPHmPewY935i0H6s2N3rEt0HnGWK8jJcjQQfdbJfEl\nMGVFoETfquB8PL3RnslRX5p6CNI2KTV0s847jDFuEqi2aMhskXJ9Mqzdt0rTMMmD\noI5zgMnT3yZmaNfafF4N2o4mO9bcshtpqj43JdECgYEAvX/omRxrB9OIGCw7c0WC\n3Smya6ElLURmK5YtxJMCUZB0EdJiNtvouz97kC/DpQoEcg1Ls/Ykg+XDmYaRcLhH\ntrjzI+fop56Ym6JpQjwyd0VVS27kZ6vi2YlX/h1yizJhuHI1wEUaJZP3+jNLvxd6\nVN8lma7mV/Kk2Q4Sd9lLf6I=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-gwe0a@ipssi-project-timer-manager.iam.gserviceaccount.com",
+  "client_id": "110692618072947600257",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-gwe0a%40ipssi-project-timer-manager.iam.gserviceaccount.com"
+}
 
 ```
-## Using Project Timer Manager
 
-To use **Project Timer Manager** , follow these steps:
+## Using IPSSI Timer Manager
+
+To use **IPSSI Timer Manager** , follow these steps:
 
 
-To install Project Timer Manager, follow these steps:
+Install IPSSI Timer Manager, by running this command:
 
 ```sh
 
 docker-compose up --build
 
 ```
+
 Now the API is ready to communicate with the front.
 
 You can play with the API without the front if you wish by going on: `http://localhost:8080/graphql`.
 
-**Note**: You must know how to make [GraphQL](https://graphql.org/) queries and mutations
+**Note**: You must know how to make [GraphQL](https://graphql.org/) queries and mutations inside the graphql playground.
 
 
 ## Contributing to Project Timer Manager
@@ -73,12 +79,18 @@ Alternatively see the GitHub documentation on [creating a pull request](https://
 Here are the people who actively contributed to this project:
 
 * [@almorisson](https://github.com/almorisson) 📖
+* [@Anagaret](https://github.com/Anagaret) 📖
+* [@JeanEmpereur](https://github.com/JeanEmpereur) 📖
 
 You might want to consider using something like the [All Contributors](https://github.com/all-contributors/all-contributors) specification and its [emoji key](https://allcontributors.org/docs/en/emoji-key) if you want to contribute to the project.
 
 ## Contact
 
 If you want to contact me you can reach me at <mo.ndiaye@ecole-ipssi.net>.
+
+You can also reach contributors by using contact email:
+- <a.nagarettiname@ecole-ipssi.net>.
+- <j.empereur@ecole-ipssi.net>.
 
 ## License
 <!--- If you're not sure which open license to use see https://choosealicense.com/--->
