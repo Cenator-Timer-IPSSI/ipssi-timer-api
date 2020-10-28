@@ -94,6 +94,6 @@ const db = async () => {
 db();
 
 app.listen(process.env.PORT, () => {
-	console.log(`Server is listening on http://localhost:${process.env.PORT}`);
-	console.log(`Server is listening on http://localhost:${process.env.PORT}${apolloServer.graphqlPath}`);
+	console.log(`Server is listening on http://${process.env.HOST}:${process.env.PORT}`);
+	console.log(`Server is listening on http://${process.env.HOST}:${process.env.PORT}${apolloServer.graphqlPath}`);
 });
