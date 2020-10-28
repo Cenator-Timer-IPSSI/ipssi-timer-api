@@ -1,7 +1,7 @@
-version: "3"
+version: "3.3"
 services:
   api:
-    container_name: api
+    container_name: ipssi_timer_api_node # Note: Always give unique name to containers to avoid conflict naming
     restart: always
     build: ./
     ports:
@@ -24,7 +24,7 @@ services:
     ports:
       - 27017:27017
 
-# Volumes definition:
+# Volumes definition with connectivity
 volumes:
   mongo-storage:
     driver: local
