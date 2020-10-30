@@ -1,5 +1,5 @@
 <div align="center">
-	<img width="500" height="200" src="./logo.svg" alt="Project Timer Manager logo">
+	<img width="500" height="500" src="./logo.png" alt="Project Timer Manager logo">
 	<br>
 	<br>
 </div>
